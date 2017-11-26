@@ -1,5 +1,7 @@
 package com.example.mohamed.merinal;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -81,13 +83,25 @@ public class contentAdapter extends RecyclerView.Adapter<contentAdapter.ViewHold
     public class ViewHolder extends RecyclerView.ViewHolder{
         private TextView name , infos ;
         ImageView icon;
+        private final Context context;
         public ViewHolder(View view) {
             super(view);
+            context = view.getContext();
 
             name = (TextView)view.findViewById(R.id.name);
             infos = (TextView)view.findViewById(R.id.infos);
             icon = (ImageView)view.findViewById(R.id.imageView);
 
+            view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    Intent intent = new Intent(context , SwipeActivity.class);
+                    context.startActivity(intent);
+
+
+                }
+            });
         }
     }
 
