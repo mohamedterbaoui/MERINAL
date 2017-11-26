@@ -9,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,10 +22,10 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
     }
-    public void goToSecondActivity(View view){
-        tag = (int) view.getTag();
-        //Intent intent = new Intent(getApplicationContext() ,Categories.class );
-       // startActivity(intent);
+    public void SecondActivity(View view){
+        tag = Integer.parseInt(view.getTag().toString());
+        Intent intent = new Intent(this ,Categories.class );
+        startActivity(intent);
     }
 
     @Override
